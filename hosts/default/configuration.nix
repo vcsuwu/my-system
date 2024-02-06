@@ -2,10 +2,10 @@
 
 {
   imports =
-  [
-    ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
-  ];
+    [
+      ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
+    ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -38,19 +38,19 @@
 
   security.rtkit.enable = true;
   services.pipewire = {
-	  enable = true;
-	  alsa.enable = true;
-	  alsa.support32Bit = true;
-	  pulse.enable = true;
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
   };
 
   security.polkit.enable = true;
 
   fonts.packages = with pkgs; [
-	  noto-fonts
-	  noto-fonts-cjk
-	  noto-fonts-emoji
-	  (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
 
   users.users.vocus = {
@@ -71,8 +71,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
-     neovim
-     git
+    neovim
+    git
   ];
 
   system.stateVersion = "23.11";
