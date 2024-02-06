@@ -28,9 +28,12 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
+  programs = {
+    hyprland = {
+      enable = true;
+      xwayland.enable = true;
+    };
+    zsh.enable = true;
   };
 
   security.rtkit.enable = true;
@@ -54,6 +57,7 @@
     isNormalUser = true;
     description = "vocus";
     extraGroups = [ "networkmanager" "wheel" ];
+    shell = pkgs.zsh;
   };
 
   home-manager = {

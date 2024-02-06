@@ -38,11 +38,13 @@
 
     direnv = {
       enable = true;
-      enableBashIntegration = true; # see note on other shells below
+      enableZshIntegration = true; # see note on other shells below
     };
 
-    bash = {
+    zsh = {
       enable = true;
+      enableAutosuggestions = true;
+      enableCompletion = true;
     };
 
     home-manager.enable = true;
