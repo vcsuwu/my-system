@@ -5,16 +5,16 @@
   home.homeDirectory = "/home/vocus";
   home.packages = with pkgs; [
     neofetch
-    nnn
+    ranger
 
     zip
     xz
     unzip
     p7zip
 
-    brave
+    firefox
     rofi-wayland
-    foot
+    kitty
     grim
     slurp
     wl-clipboard
@@ -45,9 +45,39 @@
       enable = true;
       enableAutosuggestions = true;
       enableCompletion = true;
+      localVariables = {
+      	PS1 = "[%n@%m %/] ❯ ";
+      };
+    };
+
+    kitty = {
+      enable = true;
+      shellIntegration.enableZshIntegration = true;
+      font.name = "JetBrainsMono Nerd Font Mono";
+      settings = {
+      	placement_strategy = "top-left";
+	foreground = "#ffffff";
+	background = "#000000";
+	background_opacity = "0.7";
+      };
     };
 
     home-manager.enable = true;
+  };
+
+  xdg = {
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = "other/desktop";
+      documents = "docs";
+      download = "installs";
+      music = "media/music";
+      pictures = "media/pictures";
+      publicShare = "other/public";
+      templates = "other/templates";
+      videos = "media/vids";
+    };
   };
 
   home.stateVersion = "23.11";
