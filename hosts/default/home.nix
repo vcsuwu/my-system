@@ -31,9 +31,9 @@
 
   programs = {
     git = {
-    enable = true;
-    userName = "vocus";
-    userEmail = "zenyabtw@gmail.com";
+      enable = true;
+      userName = "vocus";
+      userEmail = "zenyabtw@gmail.com";
     };
 
     direnv = {
@@ -46,7 +46,7 @@
       enableAutosuggestions = true;
       enableCompletion = true;
       localVariables = {
-      	PS1 = "[%n@%m %/] ❯ ";
+        PS1 = "%~ ❯ ";
       };
     };
 
@@ -55,10 +55,11 @@
       shellIntegration.enableZshIntegration = true;
       font.name = "JetBrainsMono Nerd Font Mono";
       settings = {
-      	placement_strategy = "top-left";
-	foreground = "#ffffff";
-	background = "#000000";
-	background_opacity = "0.7";
+        placement_strategy = "top-left";
+        foreground = "#ffffff";
+        background = "#000000";
+        background_opacity = "0.7";
+        window_padding_width = 10;
       };
     };
 
@@ -66,6 +67,7 @@
   };
 
   xdg = {
+    enable = true;
     userDirs = {
       enable = true;
       createDirectories = true;
